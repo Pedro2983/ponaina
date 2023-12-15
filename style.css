@@ -66,10 +66,10 @@ text-align: center;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+    animation: slide-back 0.2s;
 }
 .light #swich button {
-right: 0;
-left: initial;
+animation: slide-in 0.2s forwards;
 }
 #swich span {
     display: block;
@@ -79,6 +79,9 @@ background: var(--surfice-color);
 border: 1px solid  var(--stoke-color);
 backdrop-filter: blur(4px);
 border-radius: 9999px;
+}
+#swich button:hover {
+outline: 8px solid var(--border-radius);
 }
 ul {
     list-style: none;
@@ -134,4 +137,20 @@ footer {
 .light {
     --bg-url: url(./assets/assets/bg-desktop-light.jpg)
 }
+}
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+     to {
+        left: 50%;
+     }
+}
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+     to {
+        left: 0;
+     }
 }
